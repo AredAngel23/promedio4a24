@@ -58,13 +58,33 @@ public class PromedioGrupo {
         return (suma / alumnos.length );
     };
 
+    public static double calcularPromedioEstructuras(){
+        double suma = 0;
+        for (Alumno a : alumnos){
+            suma += a.getEstructuras();
+        }
+        return (suma / alumnos.length );
+    };
+
+    public static double calcularPromedioIngles(){
+        double suma = 0;
+        for (Alumno a : alumnos){
+            suma += a.getIngles();
+        }
+        return (suma / alumnos.length);
+    };
+
+    public static double calcularPromedioIot(){
+        double suma = 0;
+        for (Alumno a : alumnos){
+            suma += a.getIot();
+        }
+        return (suma / alumnos.length);
+    };
+
     public static void main(String[] args) throws Exception {
         int n; //tamaño del grupo
-        double promedio; // El promedio del grupo
-
-        // double[] calificaciones; //calificaciones de cada alumno
-        // double suma = 0; //para sumar calificaciones
-        // double promedio; //el promedio del grupo
+        double promedio, promedioEstructuras, promedioIngles, promedioIot; // El promedio del grupo y el de las materias
 
         System.out.println("Programa que calcula el promedio de un grupo");
         System.out.println("--------------------------------------------");
@@ -81,8 +101,16 @@ public class PromedioGrupo {
         imprimirAlumnos();
         //Obtener el promedio
         promedio = calcularPromedioGrupo();
+        // Obtener el promedio de cada una de las materias
+        promedioEstructuras = calcularPromedioEstructuras();
+        promedioIngles = calcularPromedioIngles();
+        promedioIot = calcularPromedioIot();
 
         System.out.println("--------------------------------------------");
         System.out.println("El promedio de grupo es: " + promedio);
+        System.out.println("--------------------------------------------");
+        System.out.println("El promedio de grupo en la materia de Estructuras es: " + promedioEstructuras);
+        System.out.println("El promedio de grupo en la materia de Inglés es: " + promedioIngles);
+        System.out.println("El promedio de grupo en la materia de IOT es: " + promedioIot);
     }
 }

@@ -1,4 +1,4 @@
-public class Alumno { 
+public class Alumno {  
     private String matricula;
     private String nombre;
     private double estructuras;
@@ -6,10 +6,18 @@ public class Alumno {
     private double iot;
     private double promedio;
 
-    // Constructor
+    // Constructores
     public Alumno(String m, String n){
         this.matricula = m;
         this.nombre = n;
+    }
+
+    public Alumno(String n){
+        this.nombre = n;
+    }
+
+    public Alumno() {
+        System.out.println("Esto es un alumno");
     }
 
     // Getters and Setters
